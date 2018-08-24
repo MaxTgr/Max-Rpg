@@ -1,0 +1,19 @@
+{
+  "name": "max_rpg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Max Sylver",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^2.0.8"
+  },
+  "devDependencies": {
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  }
+}
