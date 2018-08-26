@@ -1,0 +1,30 @@
+#fixed-floating-button {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+}
+
+img {
+    object-fit: cover;
+}
+
+@media (max-width: 600px) {
+    img {
+        width: 80vw;
+        height: 80vw;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 991px) {
+    img {
+        width: 40vw;
+        height: 40vw;
+    }
+}
+
+@media (min-width: 992px) {
+    img {
+        width: 20vw;
+        height: 20vw;
+    }
+}

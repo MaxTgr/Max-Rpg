@@ -13,38 +13,7 @@
     <!-- Material icons for materialize -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <style>
-        #fixed-floating-button {
-            position: fixed;
-            bottom: 50px;
-            right: 50px;
-        }
-
-        img {
-            object-fit: cover;
-        }
-
-        @media (max-width: 600px) {
-            img {
-                width: 80vw;
-                height: 80vw;
-            }
-        }
-
-        @media (min-width: 601px) and (max-width: 991px) {
-            img {
-                width: 40vw;
-                height: 40vw;
-            }
-        }
-
-        @media (min-width: 992px) {
-            img {
-                width: 20vw;
-                height: 20vw;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="./main.css">
 
 </head>
 
@@ -83,88 +52,16 @@
     <div id="dices">Test 1</div>
 
     <div id="sheets">
-        <div class="row">
-            <div class="col s12 m6 l3">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="../images/2.png">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title">Card Title</span>
-                        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because
-                            I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m6 l3">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="../images/3.png">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title">Card Title</span>
-                        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because
-                            I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m6 l3">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="../images/2.png">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title">Card Title</span>
-                        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because
-                            I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m6 l3">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="../images/3.png">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title">Card Title</span>
-                        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because
-                            I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
-            </div>
-            <div id="fixed-floating-button">
-                <a id="floating-btn" class="btn-floating btn-large red">
-                    <i class="large material-icons">add</i>
-                </a>
-            </div>
+        <div id="cards-container" class="row">
+        </div>
+        <div id="fixed-floating-button">
+            <a id="floating-btn" class="btn-floating btn-large red">
+                <i class="large material-icons">add</i>
+            </a>
         </div>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var btn = document.querySelectorAll('.fixed-action-btn');
-            var navBar = document.querySelectorAll('.sidenav');
-            var el = document.querySelectorAll('.tabs');
 
-            var btnInstance = M.FloatingActionButton.init(btn);
-            var navInstance = M.Sidenav.init(navBar);
-            var tabInstance = M.Tabs.init(el);
-        });
-        document.getElementById('floating-btn').addEventListener("click", () => {
-            alert("OwO");
-        });
-    </script>
+    <script src="./main.js"></script>
 
 </body>
 
