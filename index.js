@@ -24,22 +24,19 @@ function createSheetWindow(isNew, id) {
   sheetWindow.loadFile('./static/sheet.html');
 
   if (isNew || id === null) {
-    mainWindow.webContents.send('sheet', null);
+    sheetWindow.webContents.send('openSheet', null);
   } else {
-    mainWindow.webContents.send('sheet', id);
+    sheetWindow.webContents.send('openSheet', id);
   }
-
-  // // Create the browser window.
-  // mainWindow = new BrowserWindow({});
-
-  // // and load the main.html of the app.
-  // mainWindow.loadFile('./static/main.html');
-  console.log('created!');
 }
 
 // catch newSheet command
 ipcMain.on('newSheet', () => {
   createSheetWindow(true, null);
+});
+
+ipcMain.on('openSheet', (name) => {
+  createSheetWindow(false, name);
 });
 
 // load app

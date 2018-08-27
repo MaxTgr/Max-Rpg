@@ -1,7 +1,7 @@
 const { ipcRenderer } = require('electron');
 
-ipcRenderer.on('sheet', (char) => {
-  if (char != null) {
-    // get the character data
-  }
+ipcRenderer.on('openSheet', (e, char) => {
+  const par = document.createElement('p');
+  par.textContent = char;
+  document.appendChild(par);
 });

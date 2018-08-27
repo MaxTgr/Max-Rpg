@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   M.Tabs.init(el);
 });
 
-function MakeCard() {
+function MakeCard(name) {
   // appending to the doc
   const container = document.getElementById('cards-container');
 
@@ -39,7 +39,7 @@ function MakeCard() {
   // card title
   const cardTitle = document.createElement('span');
   cardTitle.className = 'card-title';
-  cardTitle.textContent = 'xxxxx';
+  cardTitle.textContent = name;
   cardContent.appendChild(cardTitle);
   // card description
   const cardDesc = document.createElement('p');
@@ -55,8 +55,14 @@ function MakeCard() {
   link.href = '#';
   link.textContent = 'xxxxx';
   cardAction.appendChild(link);
+  // card link listener
+  link.addEventListener('click', () => {
+    ipcRenderer.send('openSheet', cardTitle.textContent);
+  });
 }
 
 document.getElementById('floating-btn').addEventListener('click', () => {
   ipcRenderer.send('newSheet');
 });
+
+MakeCard('Niko');
