@@ -1,3 +1,5 @@
+const { ipcRenderer } = require('electron');
+
 document.addEventListener('DOMContentLoaded', () => {
   const btn = document.querySelectorAll('.fixed-action-btn');
   const navBar = document.querySelectorAll('.sidenav');
@@ -53,23 +55,8 @@ function MakeCard() {
   link.href = '#';
   link.textContent = 'xxxxx';
   cardAction.appendChild(link);
-
-  /* <div class="col s12 m6 l3">
-    <div class="card">
-      <div class="card-image">
-        <img src="../images/2.png">
-      </div>
-      <div class="card-content">
-        <span class="card-title">Card Title</span>
-        <p>I am a very simple card. I am good at containing small bits of information.</p>
-      </div>
-      <div class="card-action">
-        <a href="#">This is a link</a>
-      </div>
-    </div>
-  </div> */
 }
 
 document.getElementById('floating-btn').addEventListener('click', () => {
-  MakeCard();
+  ipcRenderer.send('newSheet');
 });
