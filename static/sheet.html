@@ -1,11 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Sheet</title>
+    <!-- Compiled and minified CSS for materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript for materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+    <!-- Material icons for materialize -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="sheet.css">
 </head>
+
 <body>
-    <h1>HMMMMMMM</h1>
+    <ul class="tabs">
+        <li class="tab">
+            <a href="#bio">Bio</a>
+        </li>
+        <li class="tab">
+            <a href="#stats" class="active">Stats</a>
+        </li>
+        <li class="tab">
+            <a href="#spells">Arsenal/Spells</a>
+        </li>
+    </ul>
+
+    <div class="row" id="fixedStats">
+        <div class="col s12">
+            <div class="progress">
+                <div class="determinate" style="width: 70%"></div>
+            </div>
+        </div>
+        <div class="input-field col s5 l2">
+            <input id="name" type="text">
+            <label for="name">Name</label>
+        </div>
+        <div class="input-field col s5 l2">
+            <input id="race" type="text">
+            <label for="race">Race</label>
+        </div>
+        <div class="input-field col s2 l1">
+            <input id="level" type="number">
+            <label for="level">Lvl</label>
+        </div>
+        <div class="input-field col s4 l2">
+            <input id="class1" type="text">
+            <label for="class1">P Class</label>
+        </div>
+        <div class="input-field col s2 l1">
+            <input id="PClasslevel" type="number">
+            <label for="PClasslevel">Lvl</label>
+        </div>
+        <div class="input-field col s4 l2">
+            <input id="class2" type="text">
+            <label for="class2">S Class</label>
+        </div>
+        <div class="input-field col s2 l1">
+            <input id="SClasslevel" type="number">
+            <label for="SClasslevel">Lvl</label>
+        </div>
+        <div class="input-field col s4 l4">
+            <input id="xpPoints" type="number">
+            <label for="xpPoints">Experience</label>
+        </div>
+        <div class="input-field col s6 l6 alignment">
+            <select>
+                <option value="" disabled selected></option>
+                <option value="1">Lawful Good</option>
+                <option value="2">Lawful Neutral</option>
+                <option value="3">Lawful Evil</option>
+                <option value="4">Neutral Good</option>
+                <option value="5">True Neutral</option>
+                <option value="6">Neutral Evil</option>
+                <option value="7">Chaotic Good</option>
+                <option value="8">Chaotic Neutral</option>
+                <option value="9">Chaotic Evil</option>
+            </select>
+            <label>Alignment</label>
+        </div>
+        <div class="input-field col s2 l2">
+            <a class="btn-floating waves-effect waves-light red"><i class="material-icons">keyboard_arrow_up</i></a>
+        </div>
+    </div>
+
+    <div id="bio">
+
+    </div>
+    <div id="stats">
+
+    </div>
+    <div id="spells">
+
+    </div>
 
     <script src="./sheet.js"></script>
 </body>
+
 </html>

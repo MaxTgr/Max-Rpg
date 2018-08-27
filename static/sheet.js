@@ -1,7 +1,12 @@
-const { ipcRenderer } = require('electron');
+const electron = require('electron');
 
-ipcRenderer.on('openSheet', (e, char) => {
-  const par = document.createElement('p');
-  par.textContent = char;
-  document.appendChild(par);
+const currentWindow = electron.remote.getCurrentWindow();
+console.log(currentWindow.sheet.name);
+
+document.addEventListener('DOMContentLoaded', () => {
+  const el = document.querySelectorAll('.tabs');
+  const sel = document.querySelectorAll('select');
+
+  M.FormSelect.init(sel);
+  M.Tabs.init(el);
 });

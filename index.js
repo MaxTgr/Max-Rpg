@@ -18,16 +18,12 @@ function createMainWindow() {
   });
 }
 
-function createSheetWindow(isNew, id) {
+function createSheetWindow(isNew, char) {
   sheetWindow = new BrowserWindow({});
 
   sheetWindow.loadFile('./static/sheet.html');
 
-  if (isNew || id === null) {
-    sheetWindow.webContents.send('openSheet', null);
-  } else {
-    sheetWindow.webContents.send('openSheet', id);
-  }
+  sheetWindow.sheet = { newChar: isNew, name: char };
 }
 
 // catch newSheet command
@@ -35,7 +31,7 @@ ipcMain.on('newSheet', () => {
   createSheetWindow(true, null);
 });
 
-ipcMain.on('openSheet', (name) => {
+ipcMain.on('openSheet', (e, name) => {
   createSheetWindow(false, name);
 });
 
