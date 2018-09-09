@@ -1,4 +1,7 @@
-// const electron = require('electron');
+const electron = require('electron');
+
+const currentWindow = electron.remote.getCurrentWindow();
+console.log(currentWindow.sheet.name);
 
 document.addEventListener('DOMContentLoaded', () => {
   const el = document.querySelectorAll('.tabs');
@@ -21,4 +24,9 @@ document.querySelector('#hide-fixed').addEventListener('click', () => {
   } else {
     hideBtn.textContent = 'keyboard_arrow_up';
   }
+});
+
+document.querySelector('#fixedForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  console.log(e);
 });
