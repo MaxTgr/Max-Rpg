@@ -1,7 +1,12 @@
 const electron = require('electron');
+const fs = require('fs');
 
 const currentWindow = electron.remote.getCurrentWindow();
-console.log(currentWindow.sheet.name);
+const sheetOwner = currentWindow.sheet.name;
+
+function makeJson(formContent) {
+  fs.writeFileSync(`${sheetOwner}.json`, JSON.stringify(formContent));
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   const el = document.querySelectorAll('.tabs');
@@ -26,7 +31,13 @@ document.querySelector('#hide-fixed').addEventListener('click', () => {
   }
 });
 
-document.querySelector('#fixedForm').addEventListener('submit', (e) => {
-  e.preventDefault();
-  console.log(e);
+document.querySelector('#fixedForm').addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const formContent = { name: sheetOwner, data: {} };
+  const inputs = document.querySelectorAll('.inputCollection');
+  inputs.forEach((element) => {
+    formContent.data[element.id] = element.value;
+  });
+  makeJson(formContent);
 });

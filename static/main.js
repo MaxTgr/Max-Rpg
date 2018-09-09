@@ -29,7 +29,7 @@ function MakeCard(name) {
   card.appendChild(cardImage);
   // card image
   const image = document.createElement('img');
-  image.src = '../images/2.png';
+  image.src = '../images/3.png';
   cardImage.appendChild(image);
 
   // card content holder
