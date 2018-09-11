@@ -5,3 +5,7 @@
 .hidden{
     display: none;
 }
+
+#stats-main-skills h1{
+    margin: 0;
+}
