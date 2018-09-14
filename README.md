@@ -1,4 +1,4 @@
-# Max-Rpg
+# Max-Rpg (On hold)
 An Electron Tabletop RPG app.
 
 ## WIP
